@@ -6,14 +6,13 @@ import { NoticiaService } from '../../service/noticia.service';
   selector: 'app-home',
   standalone: false,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  private noticiaService = inject(NoticiaService);
   destaque: Noticia;
   noticias: Noticia[] = [];
 
-  constructor() {
+  constructor(private noticiaService: NoticiaService) {
     this.destaque = this.noticiaService.getDestaque();
     this.noticias = this.noticiaService.getUltimasNoticias();
   }

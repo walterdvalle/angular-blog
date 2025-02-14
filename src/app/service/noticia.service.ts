@@ -5,10 +5,9 @@ import { Noticia } from '../model/noticia';
   providedIn: 'root',
 })
 export class NoticiaService {
-  constructor() {}
-
   getDestaque(): Noticia {
     return new Noticia(
+      '876',
       'https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg',
       'Lançado novo filme do Homem de Ferro',
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel consectetur mauris. Proin elit sem, dignissim dapibus
@@ -20,6 +19,7 @@ export class NoticiaService {
     let noticias: Noticia[] = [];
     noticias.push(
       new Noticia(
+        '1',
         'https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg',
         'Nova Temporada de Stranger Things Garante Emoção e Mistério em Sua Retorno à Netflix',
         ''
@@ -27,6 +27,7 @@ export class NoticiaService {
     );
     noticias.push(
       new Noticia(
+        '2',
         'https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg',
         'Sucesso de The Last of Us Revoluciona o Universo dos Games na TV e Conquista a Crítica',
         ''
@@ -34,6 +35,7 @@ export class NoticiaService {
     );
     noticias.push(
       new Noticia(
+        '3',
         'https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg',
         'Série The Bear Eleva a Qualidade da Comédia Dramática, Confirmando-se como um Fenômeno do Ano',
         ''
@@ -42,4 +44,7 @@ export class NoticiaService {
     return noticias;
   }
 
+  getNoticiaById(id: string): Noticia {
+    return this.getUltimasNoticias().find((x) => x.id === id)!;
+  }
 }
