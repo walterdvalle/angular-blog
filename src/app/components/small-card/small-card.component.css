@@ -20,6 +20,10 @@
   align-items: center;
 }
 
+h1 {
+  font-size: x-large;
+}
+
 .container__small-card-separator {
   margin-top: 10px;
 }

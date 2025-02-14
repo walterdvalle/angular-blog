@@ -5,11 +5,13 @@
 
 <div class="container__articles">
   <div class="articles__main">
-    <app-big-card></app-big-card>
+    <app-big-card imagem="{{destaque.imagem}}"
+      titulo="{{destaque.titulo}}"
+      manchete="{{destaque.manchete}}">
+    </app-big-card>
   </div>
   <div class="articles__others">
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
+    <app-small-card *ngFor="let noticia of noticias" imagem="{{noticia.imagem}}"
+      titulo="{{noticia.titulo}}"></app-small-card>
   </div>
 </div>
